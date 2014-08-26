@@ -76,11 +76,18 @@
 			<label for="question3"><input type="radio" name="question3" value="4">Answer4</label>
 		</li>		
 		<li>
-			<p>Question 4</p>
+			<p>Question 4</p> <!-- remember that for a checkbox, the name should be an array -->
 			<label for="question4"><input type="checkbox" name="question4[]" value="1">Answer1</label>
 			<label for="question4"><input type="checkbox" name="question4[]" value="2">Answer2</label>
 			<label for="question4"><input type="checkbox" name="question4[]" value="3">Answer3</label>
 			<label for="question4"><input type="checkbox" name="question4[]" value="4">Answer4</label>
+		</li>
+		<li>		
+			<label for="selection">Did you like the test?</label>
+			<select name="selection" id="selection">
+			<option value="yes">yes</option>
+			<option value="no">no</option>
+		</select>
 		</li>
 
 	</ol>
@@ -88,6 +95,16 @@
 	</form>
 
 	<h2>Select Testing</h2>
+	<form method="POST">
+		<label for="selct_test">Please select yes or no, depending on how you're feeling.</label>
+		<select name="select_test" id="select_test">
+			<option value="1">yes</option>
+			<option value="0" selected>no</option>
+		</select>
+		<input type="submit">
+	</form>
+
+
 
 	</body>
 </html>
