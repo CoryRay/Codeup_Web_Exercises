@@ -23,7 +23,7 @@ switch (color) {
 	default:
 		console.log('I do not know anything by that color.');
 		break;
-	}
+}
 
 
     // todo: create a case statement that will handle every color except indigo and violet
