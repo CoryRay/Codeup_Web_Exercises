@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Split and Join Arrays JS</title>
+    </head>
+    <body>
+        
+        <script>
+
+			var planets = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'];
+
+		// .join is the JS equivalent of explode
+			var planetsAsString = planets.join(" | ");
+			console.log(planetsAsString);
+
+		// .join is the JS equivalent of implode
+			var planetsAsArray = planetsAsString.split(" | ");
+			console.log(planetsAsArray);
+
+        </script>
+        
+    </body>
+</html>
