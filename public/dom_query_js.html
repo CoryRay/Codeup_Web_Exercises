@@ -6,6 +6,9 @@
 <body>
 
     <h1 id="main-header">Hello World!</h1>
+
+    <button id="changeMainHeading">Change heading text</button>
+
     <ul>
         <li data-dbid="1">Item 1</li>
         <li data-dbid="2">Item 2</li>
@@ -13,7 +16,13 @@
         <li data-dbid="4">Item 4</li>
         <li data-dbid="5">Item 5</li>
     </ul>
+
+	<button id='changeList'>Change list colors</button>
+
     <h2 id="sub-header">Hello Again.</h2>
+
+    <button id="changeSubHeader">Change heading color</button>
+
     <p class="sub-paragraph">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
         eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -24,30 +33,44 @@
         culpa qui officia deserunt mollit anim id est laborum.
     </p>
 
+	<button id='changeParagraphText'>Change text</button>
+
     <script>
 
+        var changeMainHeading = document.getElementById('changeMainHeading');
         var mainHeader = document.getElementById('main-header');
 
-        mainHeader.innerHTML = 'JavaScript is cool';
+        changeMainHeading.addEventListener('click', function() {
+        	mainHeader.innerHTML = 'JavaScript is cool';
+        });
 
         var subHeader = document.getElementById('sub-header');
+        var changeSubHeader = document.getElementById('changeSubHeader');
 
-        subHeader.style['color'] = 'blue';
+        changeSubHeader.addEventListener('click', function() {
+        	subHeader.style['color'] = 'blue';
+        });
 
         var listItems = document.getElementsByTagName('li');
+        var changeList = document.getElementById('changeList');
 
-        for (var i = 0; i < listItems.length; i+=2) {
-        	if (listItems[i].attributes['data-dbid'].value == 1) {
-        		listItems[i].style['color'] = 'blue';
-        	} else {
-        		listItems[i].style['color'] = 'gray';
-        	  }
-        };
+        changeList.addEventListener('click', function () {
+	        for (var i = 0; i < listItems.length; i+=2) {
+	        	if (listItems[i].attributes['data-dbid'].value == 1) {
+	        		listItems[i].style['color'] = 'blue';
+	        	} else {
+	        		listItems[i].style['color'] = 'gray';
+	        	  }
+	        }	
+        });
 
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        var changeParagraphText = document.getElementById('changeParagraphText');
 
         // Remember that this is an array
-        subParagraphs[0].innerText = 'Mission Accomplished';
+        changeParagraphText.addEventListener('click', function() {
+        	subParagraphs[0].innerText = 'Mission Accomplished';
+        });
 
     </script>
 
