@@ -62,14 +62,16 @@
 </nav>
 <!-- ------------------------End Dumb Navbar----------------------------- -->
 
+	<?php $output = shell_exec('/usr/games/fortune');?>
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Welcome to my portfolio!</h1>
+				<h2><?php echo "<pre>$output</pre>"; ?></h2>
 				<p>This is where I will showcase all my cool stuff.</p>
-				<p><a class="btn btn-primary btn-lg" role="button">My best button</a></p>
-				<?php $output = shell_exec('/usr/games/fortune'); echo "$output";?>
+				<p><a class="btn btn-primary btn-lg" role="button">The best button</a></p>
 			</div>
 		</div>
+
 
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
