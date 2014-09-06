@@ -9,26 +9,22 @@
         <script>
 
 			var books = [ //an array of books
-					{ //bookOne is an object
-						'title': 'Requiem for a Dream', //it has a title and genre
+			//bookOne is an object
+					{ 'title': 'Requiem for a Dream', //it has a title and genre
 						'genre': 'Modern Tragedy',
 						'author': { //it also has an object named 'author'
 							'firstName': 'Hubert',
 							'lastName': 'Selby Jr.'
 						}
 					},
-
-					{
-						'title': 'Dune',
+					{ 'title': 'Dune',
 						'genre': 'Science Fiction',
 						'author': {
 							'firstName': 'Frank',
 							'lastName': 'Herbert'
 						}
 					},
-
-					{
-						'title': 'American Psycho',
+					{ 'title': 'American Psycho',
 						'genre': 'Transgressional Fiction, Satire',
 						'author': {
 							'firstName': 'Bret',
@@ -36,18 +32,14 @@
 							'lastName': 'Ellis'
 						}
 					},
-
-					{
-						'title': 'Of Mice and Men',
+					{ 'title': 'Of Mice and Men',
 						'genre': 'Tragedy',
 						'author': {
 							'firstName': 'John',
 							'lastName': 'Steinbeck'
 						}
 					},
-
-					{
-						'title': '1984',
+					{ 'title': '1984',
 						'genre': 'Dystopian',
 						'author': {
 							'firstName': 'George',
@@ -65,7 +57,12 @@
 			books.forEach(function(novel, index, books) {
 			    console.log("Book #" + index);
 			    console.log("Title: " + novel.title);
-			    console.log("Author: " + novel.author.firstName + ' ' + novel.author.lastName);
+			    if (novel.author.middleName) {
+			    	console.log("Author: " + novel.author.firstName + ' ' + novel.author.middleName + ' ' + novel.author.lastName);
+			    }
+			    else {
+			    	console.log("Author: " + novel.author.firstName + ' ' + novel.author.lastName);
+			    };
 			    console.log("---");
 			});
 			// end loop 
