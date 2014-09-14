@@ -72,58 +72,17 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
 
-                <h1 class="page-header">Cory Days<small>Adventures in Cory</small></h1>
 
-				<!-- JSON Blog Post  -->
+                <h1 class="page-header">Cory Days<small>Adventures</small></h1>
 
-				
+                <!-- JSON Blog Post  -->
 
-                <!-- First Blog Post -->
-                <h2>
-                    <a href="#">Blog Post Title</a>
-                </h2>
-                <p class="lead">
-                    by <a href="index.php">Cory Rodriguez</a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:00 PM</p>
-                <hr>
-                <img class="img-responsive" src="img/seinfeld1.jpg" alt="">
-                <hr>
-                <p>George: You're sleeping with the maid? Jerry: Yes. George: I've done that. Did you ever eat an ostrich burger. George: What's so great about a mom and pop store? Let me tell you something, if my mom and pop ran a store I wouldn't shop there? Kramer: It's the timeless art of seduction. Elaine: Snapple? Babu's Brother: No, too fruity. Jerry: We’re pathetic, you know that? George: Yeah, like I don’t know that I’m pathetic. George: Why do they make the condom packets so hard to open? Jerry: Probably to give the woman a chance to change her mind. George: Bald men with no jobs and no money who live with their parents don't approach strange women. George [trying to be cool]: I am down. I am totally down. Mark me down. Man on beach: Is anyone here a marine biologist. Jerry: Do the people that work in those little shops at the airport have any idea what the prices are, everywhere else in the world. Puddy: I painted my face. Elaine: You painted your face? Puddy: Yeah. Elaine: Why? Puddy: Well, you know, support the team.</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-                <hr>
-
-                <!-- Second Blog Post -->
-                <h2>
-                    <a href="#">Blog Post Title</a>
-                </h2>
-                <p class="lead">
-                    by <a href="index.php">Cory Rodriguez</a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
-                <hr>
-                <img class="img-responsive" src="img/banner1.jpg" alt="">
-                <hr>
-                <p>Elaine: Have you ever been to the ballet? Jerry: No, but I've seen people on tiptoes. Estelle Costanza (chastising her son for treating his body like an amusement park): Too bad you couldn't do *that* for a living. Susan: It's not a name, it's a number! George: She wants me to dress smart-casual. What is that? Jerry: I don't know, but you don't have it. The Bubble Boy [to Susan]: How 'bout taking your top off. George: I can't carry a pen. I'm afraid I'll puncture my scrotum. George: Back it up, back it up. Beep, beep, beep. Tractor story? Jerry: ’Beep, beep, beep’? What are you doing. George: Oh, it's got cachet, baby! It's got cachet up the yin-yang! Elaine: I was looking at my chart and it said that I was difficult. Why would they write that? Jerry: They've gotten to know you.</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-                <hr>
-
-                <!-- Third Blog Post -->
-                <h2>
-                    <a href="#">Blog Post Title</a>
-                </h2>
-                <p class="lead">
-                    by <a href="index.php">Cory Rodriguez</a>
-                </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on August 28, 2013 at 10:45 PM</p>
-                <hr>
-                <img class="img-responsive" src="img/tree.jpg" alt="">
-                <hr>
-                <p>Mickey: It’s 100% cotton, and some wool. Newman: Too many people got their mail. Close to 80%. Nobody’s ever cracked the 50% barrier! Jerry: I do not like the bank. I've heard the expression 'Laughing all the way to the bank'. I have never seen anyone actually doing it.</p>
-                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
+                <h3 id='title'></h3>
+                <p id='date'></p>
+                <p id='content'>Content here</p>
+                <div class='img-responsive' id='image'></div>
+				<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                
                 <hr>
 
                 <!-- Pager -->
@@ -192,7 +151,7 @@
                 <!-- Side Widget Well -->
                 <div class="well">
                     <h4>Dumb Fortune Here</h4>
-						<?php $output = shell_exec('/usr/games/fortune'); echo "$output";?>
+					<?php $output = shell_exec('/usr/games/fortune'); echo "$output";?>
                 </div>
 
             </div>
