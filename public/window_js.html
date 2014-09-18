@@ -10,17 +10,17 @@
     <textarea rows="10" cols="60" id="important"></textarea>
 
     <script>
-    	var delay = 1500;
-    	var timeoutId;
+        var delay = 1500;
+        var timeoutId;
 
         function save() {
             alert('Saved!');
         }
 
         function autosave() {
-        	clearTimeout(timeoutId);
+            clearTimeout(timeoutId);
 
-        	timeoutId = setTimeout(save, 1500);
+            timeoutId = setTimeout(save, 1500);
             // todo:
             // Use setTimeout and clearTimeout within this function
             // so that the save() function is called 5 seconds after

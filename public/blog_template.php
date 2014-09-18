@@ -12,15 +12,15 @@
     <link href="css/blog_template.css" rel="stylesheet">
 
     <!--                  KEIFERMODE             -->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-	<script>!window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>')</script>
-	<script src="/js/jquery.raptorize.1.0.js"></script>
-	<script type="text/javascript">
-	     $(window).load(function() {
-	          $('.myButton').raptorize();
-	     });
-	</script>
-	<!--                 ENDKEIFERMODE          -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+    <script>!window.jQuery && document.write('<script src="jquery-1.4.3.min.js"><\/script>')</script>
+    <script src="/js/jquery.raptorize.1.0.js"></script>
+    <script type="text/javascript">
+         $(window).load(function() {
+              $('.myButton').raptorize();
+         });
+    </script>
+    <!--                 ENDKEIFERMODE          -->
 
 </head>
 
@@ -55,7 +55,7 @@
                         <a href="#">Portfolio</a>
                     </li>
                     <li>
-						<button class="myButton">SUMMON SNAKE</button>
+                        <button class="myButton">SUMMON SNAKE</button>
                     </li>
                 </ul>
             </div>
@@ -81,7 +81,7 @@
                 <p id='date'></p>
                 <p id='content'>Content here</p>
                 <div class='img-responsive' id='image'></div>
-				<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
                 
                 <hr>
 
@@ -151,7 +151,7 @@
                 <!-- Side Widget Well -->
                 <div class="well">
                     <h4>Dumb Fortune Here</h4>
-					<?php $output = shell_exec('/usr/games/fortune'); echo "$output";?>
+                    <?php $output = shell_exec('/usr/games/fortune'); echo "$output";?>
                 </div>
 
             </div>
@@ -175,7 +175,7 @@
     </div>
     <!-- /.container -->
 
-	<script src ="js/blog_template.js"></script>
+    <script src ="js/blog_template.js"></script>
     <script src="bootstrap/js/jquery-1.11.0.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
