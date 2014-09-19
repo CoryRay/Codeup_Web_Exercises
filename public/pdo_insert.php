@@ -1,3 +1,4 @@
+
 <?php 
 
     // Get new instance of PDO object
@@ -11,8 +12,9 @@
         id INT UNSIGNED NOT NULL AUTO_INCREMENT,
         name VARCHAR(25) NOT NULL,
         location VARCHAR(50) NOT NULL,
-        date_established INT NOT NULL,
+        date_established DATE NOT NULL,
         area_in_acres INT NOT NULL,
+        description TEXT NOT NULL,
         PRIMARY KEY (id)
     )';
 
@@ -22,20 +24,20 @@
 
     // Create INSERT query
     $parks = [
-        ['Acadia', 'Maine', '1919-02-26', 47390],
-        ['Big Bend', 'Texas', '1955-06-12', 801163],
-        ['Congaree', 'South Carolina', '2003-11-10', 26546],
-        ['Death Valley', 'California, Nevada', '1994-10-31', 3372402],
-        ['Everglades', 'Florida', '1934-05-30', 1508538],
-        ['Glacier', 'Montana', '1910-05-11', 1013572],
-        ['Hot Springs', 'Arkansas', '1921-03-04', 5550],
-        ['Isle Royale', 'Michigan', '1931-03-03', 571790],
-        ['Joshua Tree', 'California', '1994-10-31', 789745],
-        ['Katmai', 'Alaska', '1980-12-02', 3674530]
+        ['Acadia', 'Maine', '1919-02-26', 47390, 'description'],
+        ['Big Bend', 'Texas', '1955-06-12', 801163, 'description'],
+        ['Congaree', 'South Carolina', '2003-11-10', 26546, 'description'],
+        ['Death Valley', 'California, Nevada', '1994-10-31', 3372402, 'description'],
+        ['Everglades', 'Florida', '1934-05-30', 1508538, 'description'],
+        ['Glacier', 'Montana', '1910-05-11', 1013572, 'description'],
+        ['Hot Springs', 'Arkansas', '1921-03-04', 5550, 'description'],
+        ['Isle Royale', 'Michigan', '1931-03-03', 571790, 'description'],
+        ['Joshua Tree', 'California', '1994-10-31', 789745, 'description'],
+        ['Katmai', 'Alaska', '1980-12-02', 3674530, 'description']
     ];
 
     foreach ($parks as $park) {
-        $query = "INSERT INTO national_parks (name, location, date_established, area_in_acres) VALUES ('{$park[0]}', '{$park[1]}', '{$park[2]}', '{$park[3]}')";
+        $query = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES ('{$park[0]}', '{$park[1]}', '{$park[2]}', '{$park[3]}', '{$park[4]}')";
 var_dump($query);
 
         $dbc->exec($query);
