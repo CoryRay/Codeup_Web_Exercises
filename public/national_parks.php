@@ -14,8 +14,20 @@
     if (!empty($_POST)) {
 
         //capture the data from post array
-        
+        $new_park = $_POST;
 
+        $query = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description)
+        VALUES (:name, :location, :date_established, :area_in_acres, :description)";
+
+        $prepare_to_add = $dbc->prepare($query);
+        $prepare_to_add->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
+        $prepare_to_add->bindValue(':location', $_POST['location'], PDO::PARAM_STR);
+        $prepare_to_add->bindValue(':date_established', $_POST['date_established'], PDO::PARAM_STR);
+        $prepare_to_add->bindValue(':area_in_acres', $_POST['area_in_acres'], PDO::PARAM_INT);
+        $prepare_to_add->bindValue(':description', $_POST['description'], PDO::PARAM_STR);
+
+
+        $prepare_to_add->execute();
         //add it to the national_parks database
     }
 
@@ -88,7 +100,7 @@
                     </div>
                     <div class="pure-control-group">
                         <label for="area">Area in Acres</label>
-                        <input id="area" name="area" type="number" placeholder="Area in Acres" required>
+                        <input id="area" name="area_in_acres" type="number" placeholder="Area in Acres" required>
                     </div>
                     <div class="pure-control-group">
                         <label for="description">Description</label>
@@ -96,7 +108,7 @@
                     </div>
                     <div class="pure-control-group">
                         <label for="date">Date Established</label>
-                        <input id="date" name="date" type="date" placeholder="Date Established" required>
+                        <input id="date" name="date_established" type="date" placeholder="Date Established" required>
                     </div>
                     <div class="pure-controls">
                         <button type="submit" class="pure-button pure-button-primary">Submit</button>
