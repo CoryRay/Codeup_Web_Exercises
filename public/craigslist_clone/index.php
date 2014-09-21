@@ -1,9 +1,10 @@
 <?php 
 
+require 'dbconnect.php';
 require_once('AdManager.class.php');
 require_once('Ad.class.php');
  
-$adManager = new AdManager();
+$adManager = new AdManager($dbc);
 $ads = $adManager->loadAds();
 
  ?>
@@ -16,11 +17,11 @@ $ads = $adManager->loadAds();
 			<hr/>
 
 			<table class="table table-striped">
-            <?php foreach ($ads as $index => $ad) : ?>
+            <?php foreach ($ads as $ad) : ?>
             <tr>
-                <td><a href="ad_view.php?id=<?= $index; ?>"><?= $ad->title; ?></a></td>
+                <td><a href="ad_view.php?id=<?= $ad->id; ?>"><?= $ad->title; ?></a></td>
                 <td><?= $ad->sellerName; ?></td>
-                <td><?= $ad->creationTime; ?></td>
+                <td><?= $ad->creationTime->format("F j, Y"); ?></td>
             </tr>
             <?php endforeach; ?>
         </table>

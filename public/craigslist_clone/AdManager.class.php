@@ -4,51 +4,24 @@ require_once 'Ad.class.php';
 
 class AdManager {
 
-	public $dataFile;
+    public $dbc;
 
-	public function __construct($dataFile = 'data/ads.csv') {
-		$this->dataFile = $dataFile;
-	}
+    public function __construct($dbc) {
+        $this->dbc = $dbc;
+    }
 
-	public function loadAds() {
-		//open data file as $handle
-		$handle = fopen($this->dataFile, 'r');
+    public function loadAds() {
+        $adsStmt = $this->dbc->query('SELECT id FROM items');
 
-		//create an empty array of ads
-		$ads =[];
+        $ads = [];
 
-		//while loop
-		//while it is NOT the end of the file $handle
-		while (!feof($handle)) {
+        while ($row = $adsStmt->fetch(PDO::FETCH_ASSOC)) {
 
-			//fgetcsv gets line from a csv file
-			$csvRow = fgetcsv($handle);
+            $ad = new Ad($this->dbc, $row['id']);
 
-			//if the line is not empty at zeroeth index
-			if (!empty($csvRow[0])) {
-
-				//create a new instance of Ad
-				$ad = new Ad($csvRow[0], $csvRow[1], $csvRow[2], $csvRow[3], $csvRow[4]);
-				
-				//push the object to $ads array
-				$ads[] = $ad;
-			}
-		}
-
-		fclose($handle);
-		return $ads;
-	}
-
-	public function saveAds($ads) {
-		//opens data file as $handle
-		$handle = fopen($this->dataFile, 'w');
-
-		foreach ($ads as $ad) {
-
-			//foreach ad, write it to file as an array
-			fputcsv($handle, $ad->toArray());
-		}
-
-		fclose($handle);
-	}
+            $ads[] = $ad;
+        }
+        
+        return $ads;
+    }
 }
