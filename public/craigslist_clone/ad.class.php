@@ -18,7 +18,7 @@ class Ad {
             $selectStmt = $this->dbc->prepare('SELECT * FROM items WHERE id = ?');
             $selectStmt->execute([$this->id]);
 
-            $row = $selectStmt->fetch(PDO::FETCH_ASSOC);
+            $row = $selectStmt->fetch(PDO::FETCH_ASSOC); 
 
             $this->title = $row['title'];
             $this->body = $row['body'];
