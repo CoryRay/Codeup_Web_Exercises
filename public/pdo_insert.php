@@ -2,26 +2,22 @@
 <?php 
 
     // Get new instance of PDO object
-    $dbc = new PDO('mysql:host=127.0.0.1;dbname=codeup_pdo_test_db', 'codeup', 'codeuprocks');
+    $dbc = new PDO('mysql:host=127.0.0.1;dbname=todo_db', 'codeup', 'codeuprocks');
 
     // Tell PDO to throw exceptions on error
     $dbc->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Create the query and assign to var
-    $query = 'CREATE TABLE national_parks (
+    $query = 'CREATE TABLE todo_list (
         id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-        name VARCHAR(25) NOT NULL,
-        location VARCHAR(50) NOT NULL,
-        date_established DATE NOT NULL,
-        area_in_acres INT NOT NULL,
-        description TEXT NOT NULL,
+        todo_item VARCHAR(240) NOT NULL,
         PRIMARY KEY (id)
     )';
 
     // Run query, if there are errors they will be thrown as PDOExceptions
     $dbc->exec($query);
 
-
+/*
     // Create INSERT query
     $parks = [
         ['Acadia', 'Maine', '1919-02-26', 47390, 'description'],
@@ -37,7 +33,9 @@
     ];
 
     foreach ($parks as $park) {
-        $query = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description) VALUES ('{$park[0]}', '{$park[1]}', '{$park[2]}', '{$park[3]}', '{$park[4]}')";
+        $query = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description) 
+                  VALUES ('{$park[0]}', '{$park[1]}', '{$park[2]}', '{$park[3]}', '{$park[4]}')";
+
 var_dump($query);
 
         $dbc->exec($query);
@@ -46,3 +44,4 @@ var_dump($query);
     // Execute Query
     $numRows = $dbc->exec($query);
     echo "Inserted $numRows row." . PHP_EOL;
+*/
