@@ -1,35 +1,35 @@
 <?php 
 
-    require_once '../dbconnect.php';
+require_once '../dbconnect.php';
 
-    $offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
+$offset = isset($_GET['offset']) ? intval($_GET['offset']) : 0;
 
-    //variable $stmt queries the database with select everything from the nat'l parks
-    $stmt = $dbc->query("SELECT * 
-                         FROM national_parks LIMIT 4 OFFSET $offset");
+//variable $stmt queries the database with select everything from the nat'l parks
+$stmt = $dbc->query("SELECT * 
+                     FROM national_parks LIMIT 4 OFFSET $offset");
 
-    $row = $stmt->fetchall(PDO::FETCH_ASSOC);
+$row = $stmt->fetchall(PDO::FETCH_ASSOC);
 
-    //ADDING TO THE DATABASE
-    if (!empty($_POST)) {
+//ADDING TO THE DATABASE
+if (!empty($_POST)) {
 
-        //capture the data from post array
-        $new_park = $_POST;
+    //capture the data from post array
+    $new_park = $_POST;
 
-        $query = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description)
-        VALUES (:name, :location, :date_established, :area_in_acres, :description)";
+    $query = "INSERT INTO national_parks (name, location, date_established, area_in_acres, description)
+    VALUES (:name, :location, :date_established, :area_in_acres, :description)";
 
-        $prepare_to_add = $dbc->prepare($query);
-        $prepare_to_add->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
-        $prepare_to_add->bindValue(':location', $_POST['location'], PDO::PARAM_STR);
-        $prepare_to_add->bindValue(':date_established', $_POST['date_established'], PDO::PARAM_STR);
-        $prepare_to_add->bindValue(':area_in_acres', $_POST['area_in_acres'], PDO::PARAM_INT);
-        $prepare_to_add->bindValue(':description', $_POST['description'], PDO::PARAM_STR);
+    $prepare_to_add = $dbc->prepare($query);
+    $prepare_to_add->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
+    $prepare_to_add->bindValue(':location', $_POST['location'], PDO::PARAM_STR);
+    $prepare_to_add->bindValue(':date_established', $_POST['date_established'], PDO::PARAM_STR);
+    $prepare_to_add->bindValue(':area_in_acres', $_POST['area_in_acres'], PDO::PARAM_INT);
+    $prepare_to_add->bindValue(':description', $_POST['description'], PDO::PARAM_STR);
 
 
-        $prepare_to_add->execute();
-        //add it to the national_parks database
-    }
+    $prepare_to_add->execute();
+    //add it to the national_parks database
+}
 
 
 
@@ -68,24 +68,22 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <br>
 
-        <!-- NNED TO FIX PAGINATOR -->
-            <ul class="pure-paginator">
-                <li><a class="pure-button prev" href="#">&#171;</a></li>
-                <li><a class="pure-button pure-button-active" href="#">1</a></li>
-                <li><a class="pure-button" href="#">2</a></li>
-                <li><a class="pure-button" href="#">3</a></li>
-                <li><a class="pure-button next" href="#">&#187;</a></li>
+        <!-- UGLY PAGINATOR -->
+            <ul class="pagination">
+                <? if ($offset > 0):
+                    echo "<li><a class='prev' href='?offset=" . ($offset - 4) . "'>&#171;</a></li>";
+                   else:
+                    echo "<li><a class='prev' href='#'>&#171;</a></li>";
+                   endif;
+                ?>
+                <? if ($offset <= count($row)):
+                    echo "<li><a class='next' href='?offset=" . ($offset + 4) . "'>&#187;</a></li>";
+                   else:
+                    echo "<li><a class='next' href='#'>&#187;</a></li>";
+                   endif;
+                ?>
             </ul>
-    
-            <? if (isset($_GET['offset']) && $offset > 0 ) : ?>
-                <a class="pure-button pure-button-primary" href="<?="?offset=" . ($offset - 4);?>">Previous page</a>
-            <? endif; ?>
-  
-            <? if (isset($_GET['offset']) && $offset <= count($row) ) : ?>
-                    <a class="pure-button pure-button-primary" href="<?="?offset=" . ($offset + 4);?>">Next page</a>
-            <? endif; ?>
 
         <!-- FORM TO ADD NEW NATIONAL PARKS -->
             <form  method="POST" action="national_parks.php" class="pure-form pure-form-aligned">
