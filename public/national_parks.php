@@ -48,24 +48,24 @@ if (!empty($_POST)) {
         <div class="pure-u-1-1 container">
             <table class="pure-table pure-table-horizontal">
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Location</th>
-                        <th>Date Established</th>
-                        <th>Area (Acres)</th>
-                        <th>Description</th>
-                    </tr>
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Date Established</th>
+                    <th>Area (Acres)</th>
+                    <th>Description</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($row as $index => $details) : ?>
-                        <tr>
-                            <td><?= $details['name']; ?></td>
-                            <td><?= $details['location']; ?></td>
-                            <td><?=  date("F j, Y", strtotime($details['date_established'])); ?></td>
-                            <td><?= number_format($details['area_in_acres']); ?></td>
-                            <td><?= $details['description']; ?></td>
-                        </tr>
-                    <?php endforeach; ?>
+                <?php foreach ($row as $index => $details) : ?>
+                <tr>
+                    <td><?= $details['name']; ?></td>
+                    <td><?= $details['location']; ?></td>
+                    <td><?=  date("F j, Y", strtotime($details['date_established'])); ?></td>
+                    <td><?= number_format($details['area_in_acres']); ?></td>
+                    <td><?= $details['description']; ?></td>
+                </tr>
+                <?php endforeach; ?>
                 </tbody>
             </table>
 
@@ -74,13 +74,13 @@ if (!empty($_POST)) {
                 <? if ($offset > 0):
                     echo "<li><a class='prev' href='?offset=" . ($offset - 4) . "'>&#171;</a></li>";
                    else:
-                    echo "<li><a class='prev' href='#'>&#171;</a></li>";
+                    echo "<li><a class='prev disabled' href='#'>&#171;</a></li>";
                    endif;
                 ?>
                 <? if ($offset <= count($row)):
                     echo "<li><a class='next' href='?offset=" . ($offset + 4) . "'>&#187;</a></li>";
                    else:
-                    echo "<li><a class='next' href='#'>&#187;</a></li>";
+                    echo "<li><a class='next disabled' href='#'>&#187;</a></li>";
                    endif;
                 ?>
             </ul>
