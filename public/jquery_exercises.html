@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>jQuery Exercises</title>
@@ -6,7 +6,10 @@
     </head>
     <script>
     $(document).ready(function() {
-        $('.codeup').css('border', 'red solid 1px');
+        $('li').css('font-size', '20px');
+        $('h1, p, li').css('background-color', 'yellow');
+        var content = $('h1').html();
+        alert(content);
     });
     </script>
     <body>
