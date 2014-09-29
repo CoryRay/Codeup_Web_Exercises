@@ -6,23 +6,22 @@
     </head>
     <script>
     $(document).ready(function() {
-        var content = $('#paragraph').html();
-        alert(content);
-
+        $('.codeup').css('border', 'red solid 1px');
     });
     </script>
     <body>
-        <h1 class='heading'>MY LOUD HEADING</h1>
-        <p id='paragraph' class='lines'>This little paragraph.</p>
+        <h1 class='codeup'>MY LOUD HEADING</h1>
+        <p id='paragraph' class='codeup'>This little paragraph.</p>
         <p id='sentence'>My small sentence.</p>
 
-        <ul class='list'>
-            <li>This is unordered</li>
+        <ul>
+            <li class='codeup'>This is unordered</li>
             <li>Second item, but it doesn't matter.</li>
-            <li>Item item</li>
+            <li class='codeup'>Item item</li>
+            <li>Bye</li>
         </ul>
 
-        <div></div>
+        <div id="codeup">Divvy</div>
 
     </body>
 </html>
