@@ -7,7 +7,7 @@
     <body>
 
         <h2>Autosaving Text Input</h2>
-        <textarea rows="10" cols="60" id="important"></textarea>
+        <textarea rows="10" cols="60" id="important" autofocus></textarea>
 
         <script>
             var delay = 1500;
@@ -23,11 +23,12 @@
                 timeoutId = setTimeout(save, 1500);
             }
 
-            .on('keyup', '#important', function() {
-                autosave();
-            });
+            // .on('keyup', '#important', function() {
+            //     autosave();
+            // });
+
+            $('#important').keyup(autosave);
 
         </script>
-
     </body>
 </html>
