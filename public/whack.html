@@ -5,14 +5,29 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>WHACK!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     </head>
-    <body>
-        <img id='kornheiser' src="img/will_it_ever_end.png" alt="Whack this mole!!">
+    <body style='background-color: #fa3600'>
+        <div class='container'>
+            <div class='row'>
+                <div class='col-md-4'>
+                    <img id='kornheiser' class='img-responsive' src="img/will_it_ever_end.png" alt="Whack this mole!!">
+                </div>
+                <div class='col-md-4'>
+                    <!-- <img id='kornheiser' class='img-responsive' src="img/will_it_ever_end.png" alt="Whack this mole!!"> -->
+                </div>
+                <div class='col-md-4'>
+                    <!-- <img id='kornheiser' class='img-responsive' src="img/will_it_ever_end.png" alt="Whack this mole!!"> -->
+                </div>
+            </div>
+        </div>
         <script>
 
             $('#kornheiser').click(function(event) {
-                $(this).slideToggle();
+                $(this).slideToggle('linear');
             });
 
         </script>
