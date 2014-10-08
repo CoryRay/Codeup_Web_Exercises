@@ -2,15 +2,18 @@
 
 require_once 'Ad.class.php';
 
-class AdManager {
+class AdManager
+{
 
     public $dbc;
 
-    public function __construct($dbc) {
+    public function __construct($dbc)
+    {
         $this->dbc = $dbc;
     }
 
-    public function loadAds() {
+    public function loadAds()
+    {
         $adsStmt = $this->dbc->query('SELECT id FROM items');
 
         $ads = [];

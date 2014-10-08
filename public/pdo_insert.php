@@ -9,10 +9,10 @@
 
     // Create the query and assign to var
     $query = 'CREATE TABLE todo_list (
-        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-        todo_item VARCHAR(240) NOT NULL,
-        PRIMARY KEY (id)
-    )';
+              id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+              todo_item VARCHAR(240) NOT NULL,
+              PRIMARY KEY (id)
+              )';
 
     // Run query, if there are errors they will be thrown as PDOExceptions
     $dbc->exec($query);

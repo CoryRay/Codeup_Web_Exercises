@@ -1,6 +1,7 @@
 <?php
 
-class Ad {
+class Ad
+{
     public $dbc;
     public $id;
     public $title;
@@ -9,7 +10,8 @@ class Ad {
     public $sellerEmail;
     public $creationTime;
 
-    public function __construct($dbc, $id = null) {
+    public function __construct($dbc, $id = null)
+    {
         $this->dbc = $dbc;
 
         if (isset($id)) {
@@ -28,7 +30,8 @@ class Ad {
         }
     }
 
-    public function save() {
+    public function save()
+    {
         if (isset($this->id)) {
             $this->update();
         } else {
@@ -36,7 +39,8 @@ class Ad {
         }   
     }
 
-    protected function insert() {
+    protected function insert()
+    {
         $this->createdAt = new DateTime();
 
         $insertSql = 'INSERT INTO items (title, body, name, email, created_at)
@@ -55,7 +59,8 @@ class Ad {
         $this->id = $this->dbc->lastInsertId();
     }
 
-    protected function update() {
+    protected function update()
+    {
         $updateSql = 'UPDATE items
                       SET title = :title, body = :body, name = :name, email = :email
                       WHERE id = :id';
@@ -70,26 +75,4 @@ class Ad {
 
         $updateStmt->execute();
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
