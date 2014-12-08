@@ -74,7 +74,7 @@
             <label for="question3"><input type="radio" name="question3" value="2">Answer2</label>
             <label for="question3"><input type="radio" name="question3" value="3">Answer3</label>
             <label for="question3"><input type="radio" name="question3" value="4">Answer4</label>
-        </li>       
+        </li>
         <li>
             <p>Question 4</p> <!-- remember that for a checkbox, the name should be an array -->
             <label for="question4"><input type="checkbox" name="question4[]" value="1">Answer1</label>
@@ -82,7 +82,7 @@
             <label for="question4"><input type="checkbox" name="question4[]" value="3">Answer3</label>
             <label for="question4"><input type="checkbox" name="question4[]" value="4">Answer4</label>
         </li>
-        <li>        
+        <li>
             <label for="selection">Did you like the test?</label>
             <select name="selection" id="selection">
             <option value="yes">yes</option>
