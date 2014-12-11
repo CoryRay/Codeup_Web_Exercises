@@ -1,50 +1,38 @@
 div {
     border: 1px solid black;
     border-radius: 8px;
-    margin: 25px;
-    width: 50px;
+    margin: 10px;
+    width: 150px;
     height: 50px;
     padding: 12px;
     font-weight: bold;
     color: white;
-    box-shadow: 8px 6px gray;
+    box-shadow: 10px 8px gray
 }
 #red {
-    float:left;
+    margin-left: 0px;
     background-color: red;
 }
 #orange {
-    float: left;
+    margin-left: 30px;
     background-color: orange;
 }
 #yellow {
-    float: left;
+    margin-left: 60px;
     background-color: yellow;
 }
 #green {
-/*using clear right here bumps this element to another line */
-    clear: left;
-    float: left;
+    margin-left: 90px;
     background-color: green;
 }
 #blue {
-    float: left;
+    margin-left: 120px;
     background-color: blue;
 }
 #violet {
-    float: left;
+    margin-left: 150px;
     background-color: violet;
 }
 h1 {
     text-shadow: 1px 1px gray;
-}
-#ribbon {
-    position: fixed;
-    top: 0px;
-    right: 0px;
-}
-.arrow {
-    position: relative;
-    bottom: 85px;
-    left: 43px;
 }

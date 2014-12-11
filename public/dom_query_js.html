@@ -17,7 +17,7 @@
         <li data-dbid="5">Item 5</li>
     </ul>
 
-	<button id='changeList'>Change list colors</button>
+    <button id='changeList'>Change list colors</button>
 
     <h2 id="sub-header">Hello Again.</h2>
 
@@ -33,7 +33,7 @@
         culpa qui officia deserunt mollit anim id est laborum.
     </p>
 
-	<button id='changeParagraphText'>Change text</button>
+    <button id='changeParagraphText'>Change text</button>
 
     <script>
 
@@ -41,27 +41,27 @@
         var mainHeader = document.getElementById('main-header');
 
         changeMainHeading.addEventListener('click', function() {
-        	mainHeader.innerHTML = 'JavaScript is cool';
+            mainHeader.innerHTML = 'JavaScript is cool';
         });
 
         var subHeader = document.getElementById('sub-header');
         var changeSubHeader = document.getElementById('changeSubHeader');
 
         changeSubHeader.addEventListener('click', function() {
-        	subHeader.style['color'] = 'blue';
+            subHeader.style['color'] = 'blue';
         });
 
         var listItems = document.getElementsByTagName('li');
         var changeList = document.getElementById('changeList');
 
         changeList.addEventListener('click', function () {
-	        for (var i = 0; i < listItems.length; i+=2) {
-	        	if (listItems[i].attributes['data-dbid'].value == 1) {
-	        		listItems[i].style['color'] = 'blue';
-	        	} else {
-	        		listItems[i].style['color'] = 'gray';
-	        	  }
-	        }	
+            for (var i = 0; i < listItems.length; i+=2) {
+                if (listItems[i].attributes['data-dbid'].value == 1) {
+                    listItems[i].style['color'] = 'blue';
+                } else {
+                    listItems[i].style['color'] = 'gray';
+                  }
+            }
         });
 
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
@@ -69,7 +69,7 @@
 
         // Remember that this is an array
         changeParagraphText.addEventListener('click', function() {
-        	subParagraphs[0].innerText = 'Mission Accomplished';
+            subParagraphs[0].innerText = 'Mission Accomplished';
         });
 
     </script>

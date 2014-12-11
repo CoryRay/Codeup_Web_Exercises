@@ -5,24 +5,24 @@ var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var color = colors[Math.floor(Math.random()*colors.length)];
 
 switch (color) {
-	case 'blue':
-		console.log('Blue is the color of a blue ball');
-		break;
-	case 'red':
-		console.log('Red is the color of red food coloring');
-		break;
-	case 'orange':
-		console.log('Orange is the color of a monkey');
-		break;
-	case 'yellow':
-		console.log('Yellow is the color of a light ray with a wavelength of 600nm.');
-		break;
-	case 'green':
-		console.log('Green is the color of a flamingo after eating green shrimp.');
-		break;
-	default:
-		console.log('I do not know anything by that color.');
-		break;
+    case 'blue':
+        console.log('Blue is the color of a blue ball');
+        break;
+    case 'red':
+        console.log('Red is the color of red food coloring');
+        break;
+    case 'orange':
+        console.log('Orange is the color of a monkey');
+        break;
+    case 'yellow':
+        console.log('Yellow is the color of a light ray with a wavelength of 600nm.');
+        break;
+    case 'green':
+        console.log('Green is the color of a flamingo after eating green shrimp.');
+        break;
+    default:
+        console.log('I do not know anything by that color.');
+        break;
 }
 
 
